@@ -3,4 +3,4 @@ build:
     web: Dockerfile
 
 run:
-  web: ./go-reactgit push heroku
+  web: ./go-react
