@@ -9,3 +9,7 @@ docker run --rm -d --name go-react -p 3000:3000 go-react
 # Stop Docker at Local
 
 docker container stop go-react
+
+# Deploy master branch to heroku
+
+git push heroku master

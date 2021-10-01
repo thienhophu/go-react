@@ -10,6 +10,6 @@ func main() {
 
 	r.Use(static.Serve("/", static.LocalFile("./public", true)))
 
-	r.Run(":3000")
-	// r.Run()
+	// r.Run(":3000")
+	r.Run()
 }
