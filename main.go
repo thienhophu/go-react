@@ -6,10 +6,12 @@ import (
 )
 
 func main() {
-	r := gin.Default()
+	router := gin.Default()
 
-	r.Use(static.Serve("/", static.LocalFile("./public", true)))
+	router.GET("/albums", GetAlbums)
 
-	// r.Run(":3000")
-	r.Run()
+	router.Use(static.Serve("/", static.LocalFile("./public", true)))
+
+	router.Run(":3000")
+	// router.Run()
 }
