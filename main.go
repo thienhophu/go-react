@@ -3,13 +3,19 @@ package main
 import (
 	"github.com/gin-gonic/contrib/static"
 	"github.com/gin-gonic/gin"
+
+	"github.com/thienhophu/go-react/api"
 )
 
 func main() {
-	r := gin.Default()
+	router := gin.Default()
 
-	r.Use(static.Serve("/", static.LocalFile("./public", true)))
+	router.GET("/albums", api.GetAlbums)
+	router.GET("/albums/:id", api.GetAlbumById)
+	router.POST("/albums", api.PostAlbums)
 
-	// r.Run(":3000")
-	r.Run()
+	router.Use(static.Serve("/", static.LocalFile("./public", true)))
+
+	// router.Run(":3000")
+	router.Run()
 }
