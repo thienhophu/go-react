@@ -16,6 +16,6 @@ func main() {
 
 	router.Use(static.Serve("/", static.LocalFile("./public", true)))
 
-	router.Run(":3000")
-	// router.Run()
+	// router.Run(":3000")
+	router.Run()
 }
